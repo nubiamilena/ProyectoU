@@ -1,0 +1,55 @@
+@use "sass:color";
+@use "sass:math";
+
+$bgColor: rgb(40, 112, 184); // Color de fondo
+$primaryColor: rgb(67, 164, 209); // Color primario
+$secondaryColor: rgb(245, 245, 245); // Color secundario
+$baseFont: "Arial", sans-serif; // Fuente base
+$spaceUnit: 15px; // Unidad base de espacio
+
+body {
+  background-color: $bgColor;
+  font-family: $baseFont;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contenedor {
+  text-align: center;
+  color: $secondaryColor;
+
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: $spaceUnit;
+  }
+
+  .precios {
+    background: $primaryColor;
+    padding: $spaceUnit;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+    h2 {
+      margin: 0 0 $spaceUnit 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: math.div($spaceUnit, 2);
+        font-size: 1.2em;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
